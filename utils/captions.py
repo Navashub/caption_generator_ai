@@ -17,7 +17,7 @@ def generate_caption_pack(image_description):
 
     output = response.choices[0].message.content
 
-    # Parse output (same as before)
+    
     lines = output.strip().split("\n")
     caption = lines[0].replace("Caption:", "").strip()
     hashtags = [tag.strip() for tag in lines[1].replace("Hashtags:", "").split()]

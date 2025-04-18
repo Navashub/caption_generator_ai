@@ -8,7 +8,7 @@ import uuid
 load_dotenv()
 st.set_page_config(page_title="Audi Caption Generator", page_icon="🚘")
 
-st.title("🚘 Car Content Caption Generator")
+st.title("🚘 Car Caption Generator")
 st.write("Upload a photo of your car and get captions, hashtags, and TikTok sound ideas instantly.")
 
 uploaded_file = st.file_uploader("Upload your car photo", type=["jpg", "jpeg", "png"])
@@ -23,10 +23,10 @@ if uploaded_file:
         description = analyze_image(file_name)
         caption_pack = generate_caption_pack(description)
 
-    st.subheader("📸 Caption")
+    st.subheader("Caption")
     st.write(caption_pack["caption"])
 
-    st.subheader("🏷️ Hashtags")
+    st.subheader("Hashtags")
     st.write(" ".join(caption_pack["hashtags"]))
 
     st.subheader("🎵 TikTok Sound Ideas")
