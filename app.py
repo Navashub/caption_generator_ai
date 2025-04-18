@@ -14,6 +14,8 @@ st.write("Upload a photo of your car and get captions, hashtags, and TikTok soun
 uploaded_file = st.file_uploader("Upload your car photo", type=["jpg", "jpeg", "png"])
 
 if uploaded_file:
+    if not os.path.exists("uploads"):
+        os.makedirs("uploads")
     file_name = f"uploads/{uuid.uuid4().hex}_{uploaded_file.name}"
     with open(file_name, "wb") as f:
         f.write(uploaded_file.getbuffer())
